@@ -1,1 +1,4 @@
+Gonna do a Vehicle detection model using the car dataset in all angles.
 
+annotating the datas using labelimg 
+ work is on progress...
