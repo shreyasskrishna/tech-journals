@@ -29,3 +29,5 @@ Device Inventory: Details about hardware such as routers, switches, and servers.
 Configuration Records: Information on device settings and software versions.
 
 Performance Metrics: Data on network performance over time.
+
+: ) SASK
