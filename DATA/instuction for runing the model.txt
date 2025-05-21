@@ -1,0 +1,52 @@
+:: Step 1: Create a virtual environment
+python -m venv yolov5-env
+
+:: Step 2: Activate the environment
+yolov5-env\Scripts\activate.bat
+
+:: Step 3: Install PyTorch (CPU version)
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+:: Step 4: Install required dependencies from yolov5 repo
+pip install -r requirements.txt
+
+:: Step 5: Download higher-accuracy YOLOv5l model weights
+curl -L "https://github.com/ultralytics/yolov5/releases/latest/download/yolov5l.pt" -o yolov5l.pt
+
+:: Step 6: Run detection on sample images (optional)
+python detect.py --weights yolov5l.pt --source data/images
+
+
+:: Web cam example
+python detect.py --weights yolov5l.pt --source 0
+
+:: Image example
+python detect.py --weights yolov5l.pt --source "C:\path\to\my_image.jpg"
+
+:: Video example
+python detect.py --weights yolov5l.pt --source "C:\path\to\my_video.mp4"
+
+
+📁 Output:
+Processed results will be saved in:
+
+yolov5\runs\detect\exp
+
+
+
+✅ YOLOv5 Pretrained Weights
+
++----------+--------------+---------------------+----------+------------+-------------------------------+
+| Model    | File Name    | Accuracy (mAP@0.5)  | Size (MB)| Speed (CPU)| Best Use                      |
++----------+--------------+---------------------+----------+------------+-------------------------------+
+| yolov5n  | yolov5n.pt   | ~25.3%              | ~4.5 MB  | 🔥 Fastest | Real-time, low power devices  |
+| yolov5s  | yolov5s.pt   | ~37.0%              | ~14.5 MB | ⚡ Fast    | Good balance for CPU          |
+| yolov5m  | yolov5m.pt   | ~44.5%              | ~40.9 MB | 🕒 Moderate| Better accuracy, slower on CPU|
+| yolov5l  | yolov5l.pt   | ~47.5%              | ~89.0 MB | 🐢 Slower  | High accuracy                 |
+| yolov5x  | yolov5x.pt   | ~50.1%              | ~166 MB  | 🐌 Slowest | Highest accuracy (GPU best)   |
++----------+--------------+---------------------+----------+------------+-------------------------------+
+
+
+
+
+
