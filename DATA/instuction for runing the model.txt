@@ -33,6 +33,7 @@ Processed results will be saved in:
 yolov5\runs\detect\exp
 
 
+YOU CAN CHANGE AND MODIGY THE YOLO V5 WEIGHTS BY CHOOSING THE BELOW MODELS IN 5 AND 6 STEPS
 
 ✅ YOLOv5 Pretrained Weights
 
